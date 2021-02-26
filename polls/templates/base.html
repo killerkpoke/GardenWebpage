@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}">
+<script src="{% static 'js/myjs.js' %}"></script>  
+<title>GrowthGarden</title>
+</head>
+<body>
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="{% url 'index' %}">one</a></li>
+        <li><a href="{% url 'index' %}">two</a></li>
+        <li><a href="{% url 'index' %}">three</a></li>
+    </ul>
+    <nav class="nav-extended">
+        <div class="nav-wrapper">
+            <a href="{% url 'index' %}" class="brand-logo center">Logo</a>
+        </div>
+        <div class="nav-wrapper">
+            <ul class="nav right">
+                <li><a href="{% url 'item' %}">Items</a></li> 
+                <li><a href="{% url 'contact' %}">Contact</a></li>    
+                <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Services<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a href="{% url 'bag' %}"><i class="material-icons">shopping_cart</i></a></li>
+            </ul>
+                <div class="left">
+                    <form method="POST">
+                        <input placeholder="search" id="search" type="search" required>
+                    </form>
+                </div>
+        </div>
+    </nav>
+    {% block content %}
+
+    {% endblock content %}
+    
+       <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Elérhetőségek</h5>
+                <ul>
+                  <li><span>Ügyfélszolgálat: 062012345670 </span></li>
+                  <li><span>E-mail: lol@asdasd.com </span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container center">
+            © 2021 Copyright
+            </div>
+          </div>
+        </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
